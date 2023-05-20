@@ -19,7 +19,7 @@ public class ShopRepositoryTest {
         products.add(product3);
 
         Product[] expected = {product1, product2};
-        Product [] actual = products.remove(3);
+        Product[] actual = products.remove(3);
         assertArrayEquals(expected, actual);
     }
 

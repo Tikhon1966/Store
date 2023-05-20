@@ -16,8 +16,6 @@ public class Product {
     }
 
 
-
-
     // Вспомогательные методы для корректной работы equals
     @Override
     public boolean equals(Object o) {
