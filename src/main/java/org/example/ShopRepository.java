@@ -25,9 +25,15 @@ public class ShopRepository {
      *
      * @param product — добавляемый товар
      */
-    public void add(Product product) {
+    public Product[] add(Product product) throws AlreadyExistsException {
+        Product prod = findById(product.id);
+        if (product == prod) {
+            throw new AlreadyExistsException("Element with id: " + prod.id + " existing");
+        }
         products = addToArray(products, product);
+        return products;
     }
+
 
     public Product[] findAll() {
         return products;
@@ -56,7 +62,6 @@ public class ShopRepository {
 
     public Product findById(int id) {
         for (Product product : products) {
-            ;
             if (product.getId() == id) {
                 return product;
             }
